@@ -1,42 +1,23 @@
-﻿namespace squaresFinal
-{
-    public class Circle : IFigure
+namespace squaresFinal;
+
+public class Triangle : IFigure
     {
-        private readonly double _radius;
-
-        public Circle(double radius) => _radius = radius;
-
-        public double Square()
-        {
-            if (_radius > 0)
-            {
-                var square = Math.PI * Math.Pow(_radius, 2);
-                return square;
-            }
-            throw new ArgumentException("Radius has to be more than 0.");
-
-        }
-    }
-
-    public class Triangle : IFigure
-    {
-
-        public double A;
-        public double B;
-        public double C;
+        private readonly double _a;
+        private readonly double _b;
+        private readonly double _c;
 
         public Triangle(double a, double b, double c)
         {
-            A = a;
-            B = b;
-            C = c;
+            _a = a;
+            _b = b;
+            _c = c;
         }
-        public double P => (A + B + C) / 2;
+        public double P => (_a + _b + _c) / 2;
         public double Square()
         {
-            if (A > 0 && B > 0 && C > 0)
+            if (_a > 0 && _b > 0 && _c > 0)
             {
-                var square = Math.Sqrt(P * (P - A) * (P - B) * (P - C));
+                var square = Math.Sqrt(P * (P - _a) * (P - _b) * (P - _c));
                 return square;
             }
             else
@@ -47,10 +28,10 @@
 
         public bool IsRightTriangle()
         {
-            if (A > 0 && B > 0 && C > 0)
+            if (_a > 0 && _b > 0 && _c > 0)
             {
                 var biggest = 0D;
-                var allSides = new List<double>() { A, B, C };
+                var allSides = new List<double>() { _a, _b, _c };
                 foreach (var i in allSides)
                 {
                     if (i > biggest)
@@ -79,9 +60,3 @@
         }
 
     }
-
-    interface IFigure
-    {
-        double Square();
-    }
-}
