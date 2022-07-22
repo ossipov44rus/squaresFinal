@@ -1,6 +1,6 @@
 namespace squaresFinal;
 
-interface IFigure
+interface ISquareable
 {
     double Square();
 }

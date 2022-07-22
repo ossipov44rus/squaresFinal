@@ -1,6 +1,6 @@
 ﻿namespace squaresFinal
 {
-    public class Circle : IFigure
+    public class Circle : ISquareable
     {
         private readonly double _radius;
 

@@ -1,6 +1,6 @@
 namespace squaresFinal;
 
-public class Triangle : IFigure
+public class Triangle : ISquareable
     {
         private readonly double _a;
         private readonly double _b;
